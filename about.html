@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
+</head>
+<style>
+    .about-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 50vh;
+    height: 100%;
+    text-align: center;
+     padding-top: 100px;
+    gap: 1rem;
+    background-color: black;
+    
+}
+
+.about-section h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.about-section h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.about-section p{
+    color: #bcbcbc;
+    text-wrap: balance;
+}
+
+</style>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav>
+        <div class="logo">
+            <h2><span>P</span>ortfolio</h2>
+        </div>
+        <ul id="navLinks">
+            <li><a href="./nav.html">Home</a></li>
+            <li><a href="./About.html">About</a></li>
+            <li><a href="./skill.html">Skill</a></li>
+            <li><a href="./portfolio.html">Portfolio</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+    <!-- about section -->
+
+    <div id="about" class="about-section">
+        <h1><span>About Me</span></h1>
+        <h2>Experienced Web Developer</h2>
+        <p>As a passionate and skilled full-stack web developer, I bring extensive experience in building responsive and dynamic websites that cater to diverse user needs. My proficiency spans modern front-end technologies and robust back-end frameworks, allowing me to craft seamless and efficient web solutions. I thrive in collaborative environments, working closely with cross-functional teams to deliver high-quality results and ensure project success. With a strong commitment to continuous learning, I stay abreast of the latest developments in the ever-evolving tech landscape. Known for my innovative approach and problem-solving mindset, I excel in overcoming coding challenges and adapting to new technologies. My excellent communication skills and dedication to timely project delivery further enhance my ability to create exceptional user experiences and drive the success of web applications. My goal is to leverage my skills and expertise to contribute to impactful and cutting-edge digital solutions.</p>
+        <a href="#portfolio" class="btn">View Portfolio</a>
+    </div>
+
+
+  
+    <!-- script tags -->
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        let navLinks = document.querySelector('#navLinks')
+        let menuIcon = document.querySelector('.menu-icon')
+        navLinks.style.maxHeight = '0px'
+        menuIcon.addEventListener('click', () => {
+            if (navLinks.style.maxHeight === '0px') {
+                navLinks.style.maxHeight = '380px';
+            }
+            else {
+                navLinks.style.maxHeight = '0px';
+            }
+        })
+
+        // typing js
+        var typed = new Typed('#element', {
+            strings: ['Frontend Developer', 'Backend Developer',' Youtuber', 'Freelancer'],
+            typeSpeed: 80,
+            backSpeed: 60,
+            loop: true,
+        });
+
+        let backToTopBtn = document.querySelector('#backToTopBtn')
+        window.onscroll = function () {
+            scroollBtn();
+        }
+
+        function scroollBtn(){
+            if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = 'block';
+            }
+            else{
+                backToTopBtn.style.display = 'none';
+            }
+        }
+
+        function scrollToTop(){
+           window.scrollTo({
+            top : '0'
+           })
+        }
+    </script>
+
+</body>
+
+</html>
